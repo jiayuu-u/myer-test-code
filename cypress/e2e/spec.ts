@@ -4,7 +4,7 @@ Given("user navigates to the Myer sign-up website", () => {
   cy.visit("https://www.myer.com.au/join");
 });
 
-Given("user click the create account button", () => {
+When("user click the create account button", () => {
   cy.contains("button", "Create Account").click();
 });
 
@@ -13,14 +13,14 @@ When("user enters an invalid email address", () => {
 });
 
 When("user enters a valid email address", () => {
-  cy.get("#email").type(`tes5tsfjnh32sdf250pp9@gmail.com`);
+  cy.get("#email").type(`tes5tsfj=$sd2sdfsxaq0pp9@gmail.com`);
 });
 
-When("user clicks on the Create Account button", () => {
+Then("user clicks on the Create Account button", () => {
   cy.contains("button", "Create account").click();
 });
 
-When("user clicks on another input box", () => {
+Then("user clicks on another input box", () => {
   cy.get("#email").click();
 });
 
@@ -32,15 +32,15 @@ Then("user enters an invalid Last Name", () => {
   cy.get("#last-name").type("123[]");
 });
 
-When("user could not find entered address", () => {
+Then("user could not find entered address", () => {
   cy.get("#address").type("3 Young St");
 });
 
-When("user enter valid membership number", () => {
+Then("user enter valid membership number", () => {
   cy.get("#myer-one-field").type("2389298013");
 });
 
-When("user enter invalid membership number", () => {
+Then("user enter invalid membership number", () => {
   cy.get("#myer-one-field").type("2389298094");
   // cy.get("");
 });
