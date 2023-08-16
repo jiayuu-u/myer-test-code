@@ -1,0 +1,30 @@
+{
+  "validData": {
+    "email": "tes5sxa1s3e9@gmail.com",
+    "password": "QAZwsx123",
+    "firstName": "Nelson",
+    "lastName": "Alex",
+    "birthday": "01/01/2001",
+    "mobileNumber": "0412345678",
+    "address": "3 Young Street, BOX HILL VIC 3128",
+    "membershipNumber": "2389298013",
+    "addressLine1": "3 Young Street",
+    "addressLine2": "Floor 1",
+    "suburb": "Box Hill",
+    "postcode": "3128"
+  },
+  "invalidData": {
+    "email": "testinvalidEmail",
+    "password": "qwe123",
+    "firstName": "12!@#",
+    "lastName": "34#$%",
+    "birthday": "31312001",
+    "mobileNumber": "1234567890",
+    "address": "1 Young Street",
+    "membershipNumber": "2389298094",
+    "addressLine1": "!@#",
+    "addressLine2": "!@#",
+    "suburb": "!@#",
+    "postcode": "!@#qwe"
+  }
+}
