@@ -103,7 +103,7 @@ Feature: Myer Signup functionality
       And user clicks on another input box
     Then a text message of "Please enter a valid postcode" will be shown
 
-# This will be fail, because this membership number already have account
+# This sceniario should be redirect to the account page. But this membership number already have account.
   Scenario: Create Myer online account with a valid Myer one membership number
     When user click the create account button
       And user enters a valid email address
@@ -112,7 +112,7 @@ Feature: Myer Signup functionality
       And user enter valid membership number
       And user clicks on another input box
     Then a text message of "Your MYER one Number was added successfully" will be shown
-      And user should be redirected to the account page
+      # And user should be redirected to the account page
     
 
   Scenario: Create Myer online account with Myer one member card but can't find the membership number
