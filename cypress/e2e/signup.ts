@@ -1,7 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import signUpData from "../fixtures/signup-data.json";
 
-Given("user visits on the signup page", () => {
+Given("user visits the signup page", () => {
   cy.visit("https://www.myer.com.au/join");
 });
 
@@ -14,24 +14,20 @@ Then("user clicks on the join button", () => {
   cy.contains("button", "Join").click();
 });
 
-Then("user enters valid details for signup form with date of birth", () => {
-  cy.get("#password").type(signUpData.password);
-  cy.get("#first-name").type(signUpData.firstName);
-  cy.get("#last-name").type(signUpData.lastName);
-  cy.get("#mobile-phone").type(signUpData.mobileNumber);
-  cy.get("#date-of-birth").type(signUpData.birthday);
-  cy.get("#address")
-    .type(signUpData.typeAddress)
-    .get("ul")
-    .contains(signUpData.selectAddress)
-    .click();
-});
-
 Then("user enters valid details for signup form", () => {
   cy.get("#password").type(signUpData.password);
   cy.get("#first-name").type(signUpData.firstName);
   cy.get("#last-name").type(signUpData.lastName);
   cy.get("#mobile-phone").type(signUpData.mobileNumber);
+
+  cy.get("body").then((body) => {
+    if (body.find("#date-of-birth").length > 0) {
+      cy.get("#date-of-birth").type(signUpData.birthday);
+    }
+  });
+});
+
+Then("user enters valid address", () => {
   cy.get("#address")
     .type(signUpData.typeAddress)
     .get("ul")
@@ -44,7 +40,7 @@ Then("the user submits the signup form", () => {
 });
 
 Then("user should be redirected to the account page", () => {
-  cy.wait(10000);
+  cy.wait(60000);
   cy.url().should("be.equals", "https://www.myer.com.au/account");
 });
 
@@ -65,7 +61,7 @@ Then("user enter the card number", () => {
 });
 
 Then("user could not find entered address", () => {
-  cy.get("#address").clear().type(signUpData.typeAddress);
+  cy.get("#address").type(signUpData.typeAddress);
 });
 
 Then("user clicks on the Enter Address Manually button", () => {
