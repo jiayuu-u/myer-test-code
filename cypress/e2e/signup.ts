@@ -71,6 +71,6 @@ Then("user should be redirected to the account page", () => {
   cy.url().should("be.equals", "https://www.myer.com.au/account");
 });
 
-Then("the message {string} should be shown", (message: String) => {
+Then("the message {string} should be shown", (message) => {
   cy.contains(`${message}`, { timeout: 10000 }).should("be.visible");
 });
