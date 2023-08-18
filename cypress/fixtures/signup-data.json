@@ -7,7 +7,8 @@
   "typeAddress": "3 Young Street, box hill",
   "selectAddress": "3 Young Street, BOX HILL VIC 3128",
   "membershipNumber": "2389298013",
-  "addressLine1": "3 Young Street",
+  "typeAddress2": "1 Young Street, box hill",
+  "addressLine1": "1 Young Street",
   "addressLine2": "Floor 1",
   "suburb": "Box Hill",
   "postcode": "3128"
